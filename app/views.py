@@ -1,11 +1,10 @@
 import datetime
 import json
-from voting_app import app
 
 import requests
 from flask import render_template, redirect, request
 from flask import flash
-# from voting_app import app
+from app import app
 
 # The node with which our application interacts, there can be multiple
 # such nodes as well.
@@ -48,6 +47,7 @@ def fetch_posts():
 
 @app.route('/')
 def index():
+    print("hello")
     fetch_posts()
 
     vote_gain = []
@@ -99,5 +99,3 @@ def submit_textarea():
 
 def timestamp_to_string(epoch_time):
     return datetime.datetime.fromtimestamp(epoch_time).strftime('%Y-%m-%d %H:%M')
-
-app.run(debug=True, port=8080)
