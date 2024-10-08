@@ -144,7 +144,6 @@ blockchain.create_genesis_block()
 # the address to other participating members of the network
 peers = set()
 
-
 # endpoint to submit a new transaction. This will be used by
 # our application to add new data (posts) to the blockchain
 @app.route('/new_transaction', methods=['POST'])
@@ -324,4 +323,4 @@ def announce_new_block(block):
                       headers=headers)
 
 # Uncomment this line if you want to specify the port number in the code
-#app.run(debug=True, port=8000)
+app.run(debug=True, port=8000)
